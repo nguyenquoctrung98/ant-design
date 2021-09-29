@@ -10,17 +10,15 @@
   z-index: @zindex-modal;
   width: 0%;
   height: 100%;
-  transition: transform @animation-duration-slow @ease-base-out,
-    height 0s ease @animation-duration-slow, width 0s ease @animation-duration-slow;
-  > * {
-    transition: transform @animation-duration-slow @ease-base-out,
-      box-shadow @animation-duration-slow @ease-base-out;
-  }
+  transition: transform @animation-duration-base @ease-out-circ,
+    height 0s ease @animation-duration-base, width 0s ease @animation-duration-base;
 
   &-content-wrapper {
     position: absolute;
     width: 100%;
     height: 100%;
+    transition: transform @animation-duration-base @ease-out-circ,
+      box-shadow @animation-duration-base @ease-out-circ;
   }
 
   .@{drawer-prefix-cls}-content {
@@ -38,7 +36,7 @@
     }
     &.@{drawer-prefix-cls}-open {
       width: 100%;
-      transition: transform @animation-duration-slow @ease-base-out;
+      transition: transform @animation-duration-base @ease-out-circ;
     }
   }
 
@@ -89,7 +87,7 @@
     }
     &.@{drawer-prefix-cls}-open {
       height: 100%;
-      transition: transform @animation-duration-slow @ease-base-out;
+      transition: transform @animation-duration-base @ease-out-circ;
     }
   }
 
@@ -126,7 +124,7 @@
     height: 100%;
     opacity: 1;
     transition: none;
-    animation: antdDrawerFadeIn @animation-duration-slow @ease-base-out;
+    animation: antdDrawerFadeIn @animation-duration-base @ease-out-circ;
     pointer-events: auto;
   }
 
@@ -162,7 +160,7 @@
     border: 0;
     outline: 0;
     cursor: pointer;
-    transition: color @animation-duration-slow;
+    transition: color @animation-duration-base;
     text-rendering: auto;
 
     &:focus,
@@ -227,7 +225,7 @@
     background-color: @modal-mask-bg;
     opacity: 0;
     filter: ~'alpha(opacity=45)';
-    transition: opacity @animation-duration-slow linear, height 0s ease @animation-duration-slow;
+    transition: opacity @animation-duration-base linear, height 0s ease @animation-duration-base;
     pointer-events: none;
   }
 
